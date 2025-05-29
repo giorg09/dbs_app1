@@ -84,6 +84,7 @@ if (isset($_POST['register'])){
       </div>
       <button type="submit" id="registerButton" name="register" class="btn btn-primary w-100">Register</button>
    
+      
     </form>
   </div>
  
