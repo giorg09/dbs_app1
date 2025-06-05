@@ -282,7 +282,11 @@
  
   <script>
  
+<<<<<<< HEAD
  
+=======
+// Real-time username validation using AJAX
+>>>>>>> 34dfae5423a688ff80d4302980b043520beafc33
   const checkCourseAvailability = (courseField) => {
     courseField.addEventListener('input', () => {
       const course_name = courseField.value.trim();
@@ -291,11 +295,19 @@
         courseField.classList.remove('is-valid');
         courseField.classList.add('is-invalid');
         courseField.nextElementSibling.textContent = 'Course is required.';
+<<<<<<< HEAD
         registerButton.disabled = true;
         return;
       }
  
      
+=======
+        registerButton.disabled = true; //disabled the button
+        return;
+      }
+ 
+      // Send AJAX request to check username availability
+>>>>>>> 34dfae5423a688ff80d4302980b043520beafc33
       fetch('ajax/check_course.php', {
         method: 'POST',
         headers: {
@@ -309,33 +321,59 @@
             courseField.classList.remove('is-valid');
             courseField.classList.add('is-invalid');
             courseField.nextElementSibling.textContent = 'Course Name is already taken.';
+<<<<<<< HEAD
             registerButton.disabled = true;
+=======
+            registerButton.disabled = true; //disabled the button
+>>>>>>> 34dfae5423a688ff80d4302980b043520beafc33
           } else {
             courseField.classList.remove('is-invalid');
             courseField.classList.add('is-valid');
             courseField.nextElementSibling.textContent = '';
+<<<<<<< HEAD
             registerButton.disabled = false;
+=======
+            registerButton.disabled = false; //disabled the button
+>>>>>>> 34dfae5423a688ff80d4302980b043520beafc33
           }
         })
         .catch((error) => {
           console.error('Error:', error);
+<<<<<<< HEAD
           registerButton.disabled = true;
+=======
+          registerButton.disabled = true; //disabled the button
+>>>>>>> 34dfae5423a688ff80d4302980b043520beafc33
         });
     });
   };
  
      
  
+<<<<<<< HEAD
+=======
+  // Get form fields
+>>>>>>> 34dfae5423a688ff80d4302980b043520beafc33
   const course_name = document.getElementById('course_name');
  
   checkCourseAvailability(course_name);
  
+<<<<<<< HEAD
  
   document.getElementById('CourseForm').addEventListener('submit', function (e) {
  
  
     let isValid = true;
  
+=======
+  // Form submission validation
+  document.getElementById('CourseForm').addEventListener('submit', function (e) {
+    //e.preventDefault(); // Prevent form submission for validation
+ 
+    let isValid = true;
+ 
+    // Validate all fields on submit
+>>>>>>> 34dfae5423a688ff80d4302980b043520beafc33
     [course_name].forEach((field) => {
       if (!field.classList.contains('is-valid')) {
         field.classList.add('is-invalid');
@@ -343,6 +381,10 @@
       }
     });
  
+<<<<<<< HEAD
+=======
+    // If all fields are valid, submit the form
+>>>>>>> 34dfae5423a688ff80d4302980b043520beafc33
     if (isValid) {
       this.submit();
     }
@@ -352,4 +394,8 @@
  
 </body>
 </html>
+<<<<<<< HEAD
+=======
+ 
+>>>>>>> 34dfae5423a688ff80d4302980b043520beafc33
  
